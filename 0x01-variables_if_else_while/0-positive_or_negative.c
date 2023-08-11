@@ -16,10 +16,10 @@ int main(void)
 	int n;
 
 	/* Seed the random number generator */
-	srand(time(0));
+	srand(time(NULL));
 
 	/* Generate a random number between -100 and 100 */
-	n = rand() % n = rand() % (RAND_MAX + 1);
+	n = rand() % 200-100;
 
 	/* Print the generated number */
 	printf("The number is: %d\n", n);
