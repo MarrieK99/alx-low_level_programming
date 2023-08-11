@@ -19,7 +19,7 @@ int main(void)
 	srand(time(NULL));
 
 	/* Generate a random number between -100 and 100 */
-	n = rand() % 200-100;
+	n = rand() % 200 - 100;
 
 	/* Print the generated number */
 	printf("The number is: %d\n", n);
@@ -31,7 +31,7 @@ int main(void)
 	}
 	else if (n == 0)
 	{
-		printf("%d is zero\n", n);
+		printf("0 is zero\n");
 	}
 	else
 	{
