@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
@@ -15,7 +16,7 @@ int main(void)
 	int n;
 
 	/* Seed the random number generator */
-	srand(time(NULL));
+	srand(time(0));
 
 	/* Generate a random number between -100 and 100 */
 	n = rand() % 201 - 100;
