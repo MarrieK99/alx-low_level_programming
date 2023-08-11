@@ -27,15 +27,15 @@ int main(void)
 	/* Check if the number is positive, zero, or negative */
 	if (n > 0)
 	{
-		printf("The number %d is positive\n", n);
+		printf("Positive: %d\n", n);
 	}
 	else if (n == 0)
 	{
-		printf("The number is zero\n");
+		printf("Zero.\n");
 	}
 	else
 	{
-		printf("The number %d is negative\n", n);
+		printf("Negative: %d\n", n);
 	}
 
 	return (0);
