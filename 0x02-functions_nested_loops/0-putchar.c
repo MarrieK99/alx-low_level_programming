@@ -4,11 +4,13 @@
  *
  * Return: void
  */
-void print_putchar(void) {
-  write(1, "_putchar\n", 8);
+void print_putchar(void) 
+{
+write(1, "_putchar\n", 9);
 }
 
-int main(void) {
-  print_putchar();
-  return 0;
+int main(void)
+{
+print_putchar();
+return 0;
 }
