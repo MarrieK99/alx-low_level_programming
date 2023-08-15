@@ -28,7 +28,7 @@ printf("\n");
 
 int main(void)
 {
-int n = 10; // Change this to the desired n value
+int n = 10; /* Change this to the desired n value */
 print_times_table(n);
 
 return 0;
