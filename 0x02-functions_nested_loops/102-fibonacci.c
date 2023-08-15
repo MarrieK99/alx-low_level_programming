@@ -4,28 +4,27 @@
  * main - Entry point
  *
  * Description: Prints the first 50 Fibonacci numbers,
- *              separated by comma and space
+ * starting with 1 and 2, followed by a new line.
  *
  * Return: Always 0 (Success)
  */
 int main(void)
 {
-    int fib[50]; /* Array to store Fibonacci numbers*/
-    fib[0] = 1;
-    fib[1] = 2;
+    int i;
+    long int fib1 = 1, fib2 = 2, next_fib;
 
-    /* Calculate and store the first 48 Fibonacci numbers*/
-    for (int i = 2; i < 50; i++)
+    printf("%ld, %ld", fib1, fib2);
+
+    for (i = 2; i < 50; i++)
     {
-        fib[i] = fib[i - 1] + fib[i - 2];
+        next_fib = fib1 + fib2;
+        printf(", %ld", next_fib);
+
+        fib1 = fib2;
+        fib2 = next_fib;
     }
 
-    /* Print the Fibonacci numbers separated by comma and space*/
-    for (int i = 0; i < 49; i++)
-    {
-        printf("%d, ", fib[i]);
-    }
-    printf("%d\n", fib[49]); /* Print the last number without comma and space*/
+    printf("\n");
 
     return (0);
 }
