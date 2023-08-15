@@ -1,16 +1,18 @@
-void printAlphabetUppercase() {
-char letter;
+#include "main.h"
 
-for (letter = 'A'; letter <= 'Z'; letter++) {
-/* Write the letter to standard output*/
-write(1, &letter, 1);
+/**
+ * print_alphabet - Prints the lowercase alphabet followed by a new line.
+ */
+void print_alphabet(void)
+{
+char letter = 'a';
+
+while (letter <= 'z')
+{
+_putchar(letter);
+letter++;
 }
 
-/* Write a newline character*/
-write(1, "\n", 1);
+_putchar('\n');
 }
 
-int main() {
-printAlphabetUppercase();
-return 0;
-}
