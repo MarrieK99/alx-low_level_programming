@@ -4,6 +4,16 @@
  * print_times_table - Print times table up to 10 for a given value
  * @n: The value specifying the times table
  */
+void print_digit(int digit)
+{
+_putchar(' ');
+_putchar(digit + '0');
+}
+
+/**
+ * print_times_table - Print times table up to 10 for a given value
+ * @n: The value specifying the times table
+ */
 void print_times_table(int n)
 {
 int i, j, product;
@@ -21,31 +31,28 @@ _putchar(' '); /* Print space */
 for (j = 1; j <= n; j++)
 {
 product = i * j;
-/* Print leading spaces for single-digit numbers */
 if (product < 10 && j != 1)
 {
-_putchar(' ');
-_putchar(' ');
+print_digit(product);
+print_digit(product);
 }
 else if (product < 100 && j != 1)
 {
 _putchar(' ');
+_putchar(product / 10 + '0');
 }
-if (product >= 100)
+else if (product >= 100)
 {
-digit = (product / 100) + '0';
-_putchar(digit);
-digit = ((product / 10) % 10) + '0';
-_putchar(digit);
+digit = (product / 100);
+print_digit(digit);
+print_digit((product / 10) % 10);
 }
 else if (product >= 10)
 {
-digit = (product / 10) + '0';
-_putchar(digit);
+_putchar(product / 10 + '0');
 }
 
-digit = (product % 10) + '0';
-_putchar(digit);
+_putchar(product % 10 + '0');
 
 if (j < n)
 {
