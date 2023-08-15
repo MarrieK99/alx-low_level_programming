@@ -5,18 +5,19 @@
  */
 void print_alphabet_x10(void)
 {
-char letter;
+char letter = 'a';
 int count = 0;
 
-while (count < 10)
+while (count < 10) /* Repeat 10 times*/
 {
-letter = 'a';
-while (letter <= 'z')
+while (letter <= 'z') /* Print alphabet from 'a' to 'z'*/
 {
 _putchar(letter);
 letter++;
 }
-_putchar('\n');
+
+_putchar('\n'); /* Print a new line after each alphabet*/
+letter = 'a'; /* Reset the letter for the next iteration*/
 count++;
 }
 }
