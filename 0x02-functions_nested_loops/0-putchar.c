@@ -4,7 +4,7 @@
  *
  * Return: void
  */
-void print_putchar(void) 
+void print_putchar(void)
 {
 write(1, "_putchar\n", 9);
 }
@@ -12,5 +12,5 @@ write(1, "_putchar\n", 9);
 int main(void)
 {
 print_putchar();
-return 0;
+return (0);
 }
