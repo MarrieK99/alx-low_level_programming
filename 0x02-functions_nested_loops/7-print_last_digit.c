@@ -14,5 +14,5 @@ if (last_digit < 0)
 last_digit = -last_digit; /* Convert negative to positive */
 
 _putchar(last_digit + '0'); /* Print and return last digit */
-return last_digit;
+return (last_digit);
 }
