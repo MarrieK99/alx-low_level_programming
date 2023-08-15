@@ -11,15 +11,15 @@
  */
 int main(void)
 {
-unsigned long long int a = 1, b = 2, c;
+int a = 1, b = 2, c;
 int i;
 
-printf("%llu, %llu", a, b);
+printf("%d, %d", a, b);
 
 while (i < 98)
 {
 c = a + b;
-printf(", %lu", c);
+printf(", %d", c);
 
 a = b;
 b = c;
