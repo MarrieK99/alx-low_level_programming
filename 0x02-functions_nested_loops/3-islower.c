@@ -9,7 +9,7 @@
 int _islower(int c)
 {
 if (c >= 'a' && c <= 'z')
-return 1; /* Return 1 for lowercase characters*/
+return (1); /* Return 1 for lowercase characters*/
 else
-return 0; /* Return 0 for non-lowercase characters*/
+return (0); /* Return 0 for non-lowercase characters*/
 }
