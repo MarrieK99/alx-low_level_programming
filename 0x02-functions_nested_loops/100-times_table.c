@@ -1,43 +1,19 @@
-#include "main.h"
+#include <unistd.h> // for the write function
 
-/**
- * print_to_98 - Prints all natural numbers from n to 98.
- * @n: The starting number.
- */
-void print_to_98(int n)
-{
-if (n <= 98)
-{
-while (n <= 98)
-{
-_putchar((n / 10) + '0');
-_putchar((n % 10) + '0');
-
-if (n != 98)
-{
-_putchar(',');
-_putchar(' ');
+void print_char(char c) {
+    write(1, &c, 1);
 }
 
-n++;
-}
-}
-else
-{
-while (n >= 98)
-{
-_putchar((n / 10) + '0');
-_putchar((n % 10) + '0');
-
-if (n != 98)
-{
-_putchar(',')
-_putchar(' ');
+void print_number(int number) {
+    // ... (same as before)
 }
 
-n--;
-}
+void print_times_table(int n) {
+    // ... (same as before)
 }
 
-_putchar('\n');
+int main() {
+    int n = 12; // Change this to the desired value
+    print_times_table(n);
+    return 0;
 }
