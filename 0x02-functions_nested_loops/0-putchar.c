@@ -17,7 +17,7 @@ write(1, "_putchar\n", 9);
  *
  * Description:
  * main function serves as the entry point of the program.
- * It calls the print_putchar function to print "_putchar", followed by a new line,
+ * calls print_putchar function to print "_putchar"
  * and returns 0 to indicate successful execution.
  *
  * Return: Always 0 (Success)
