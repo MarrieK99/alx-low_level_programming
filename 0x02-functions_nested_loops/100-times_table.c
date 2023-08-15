@@ -1,38 +1,13 @@
-#include <unistd.h>
-
 /**
- * print_char - Print a character
- * @c: The character to print
+ * print_times_table - Print times table up to 10 for a given value
+ * @n: The value specifying the times table
  */
-void print_char(char c)
-{
-write(1, &c, 1);
+void print_times_table(int n) {
+if (n > 15 || n < 0)
+return;
+for (int i = 1; i <= 10; i++) {
+for (int j = 1; j <= n; j++) {
+printf("%d * %d = %d\n", j, i, j * i);
 }
-
-/**
- * print_number - Print an integer
- * @number: The integer to print
- */
-void print_number(int number)
-{
-    /* Your print_number implementation*/
 }
-
-/**
- * print_times_table - Print the n times table
- * @n: The value for the times table
- */
-void print_times_table(int n)
-{
-    /* Your print_times_table implementation*/
-}
-
-/**
- * main - Entry point of the program
- * Return: Always 0 (Success)
- */
-int main(void) {
-int n = 12; /* Change to desired value*/
-print_times_table(n);
-return (0);
 }
