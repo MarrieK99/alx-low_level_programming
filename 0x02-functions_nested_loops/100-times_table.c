@@ -9,7 +9,8 @@ void print_times_table(int n)
 if (n < 0 || n > 15)
 return;
 
-int i, j;
+int i;
+int j;
 
 for (i = 0; i <= n; i++)
 {
@@ -31,5 +32,5 @@ int main(void)
 int n = 10; /* Change this to the desired n value */
 print_times_table(n);
 
-return 0;
+return (0);
 }
