@@ -1,65 +1,35 @@
-#include "main.h"
+#include <stdio.h>
 
 /**
- * print_times_table - Print times table up to 10 for a given value
- * @n: The value specifying the times table
- */
-void print_digit(int digit)
-{
-_putchar(' ');
-_putchar(digit + '0');
-}
-
-/**
- * print_times_table - Print times table up to 10 for a given value
+ * print_times_table - Prints the n times table
  * @n: The value specifying the times table
  */
 void print_times_table(int n)
 {
-int i, j, product;
-char digit;
-
-if (n > 15 || n < 0)
+if (n < 0 || n > 15)
 return;
+
+int i, j;
 
 for (i = 0; i <= n; i++)
 {
-_putchar('0'); /* Print the first digit */
-_putchar(','); /* Print comma */
-_putchar(' '); /* Print space */
+for (j = 0; j <= n; j++)
+{
+int result = i * j;
 
-for (j = 1; j <= n; j++)
-{
-product = i * j;
-if (product < 10 && j != 1)
-{
-print_digit(product);
-print_digit(product);
+if (j == 0)
+printf("%d", result);
+else
+printf(", %3d", result);
 }
-else if (product < 100 && j != 1)
-{
-_putchar(' ');
-_putchar(product / 10 + '0');
+printf("\n");
 }
-else if (product >= 100)
-{
-digit = (product / 100);
-print_digit(digit);
-print_digit((product / 10) % 10);
-}
-else if (product >= 10)
-{
-_putchar(product / 10 + '0');
 }
 
-_putchar(product % 10 + '0');
-
-if (j < n)
+int main(void)
 {
-_putchar(',');
-_putchar(' ');
-}
-}
-_putchar('\n');
-}
+int n = 10; // Change this to the desired n value
+print_times_table(n);
+
+return 0;
 }
