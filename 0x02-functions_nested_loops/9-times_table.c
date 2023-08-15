@@ -14,6 +14,7 @@ _putchar('0'); /* Print the first cell */
 for (column = 1; column <= 9; column++)
 {
 _putchar(','); /* Print the separator */
+_putchar(' '); /* Print a space */
 
 product = row * column;
 
