@@ -11,20 +11,20 @@
  */
 int main(void)
 {
-unsigned long int fib1 = 1, fib2 = 2, next_fib;
-int count = 0;
+unsigned long long int a = 1, b = 2, c;
+int i;
 
-printf("%lu, %lu", fib1, fib2);
+printf("%llu, %llu", a, b);
 
-while (count < 96)
+while (i < 98)
 {
-next_fib = fib1 + fib2;
-printf(", %lu", next_fib);
+c = a + b;
+printf(", %lu", c);
 
-fib1 = fib2;
-fib2 = next_fib;
+a = b;
+b = c;
 
-count++;
+i++;
 }
 
 printf("\n");
