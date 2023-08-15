@@ -9,7 +9,7 @@
 int _isalpha(int c)
 {
 if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-return 1; /* Return 1 for alphabetic characters */
+return (1); /* Return 1 for alphabetic characters */
 else
-return 0; /* Return 0 for non-alphabetic characters */
+return (0); /* Return 0 for non-alphabetic characters */
 }
