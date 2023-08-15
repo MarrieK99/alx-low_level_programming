@@ -1,5 +1,6 @@
 #include <unistd.h>
 /**
+ * Main - Entry point
  * print_putchar - prints _putchar, followed by a new line
  *
  * Return: void
