@@ -16,19 +16,17 @@ int i;
 
 printf("%d, %d", a, b);
 
-while (i < 98)
+for (i = 2; i < 98; i++)
 {
 c = a + b;
 printf(", %d", c);
-
 a = b;
 b = c;
-
-i++;
 if (c > 1000000000)
 {
 a /= 10;
 b /= 10;
+}
 }
 
 printf("\n");
