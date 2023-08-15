@@ -1,4 +1,6 @@
-#include <unistd.h>
+#include <stdio.h>
+
+int _putchar(int c);
 
 /**
  * print_alphabet - prints the alphabet, in lowercase, followed by a new line
@@ -7,13 +9,17 @@
  *
  * Prints the lowercase alphabet, one character per line
  */
-void print_alphabet(void)
-{
+void print_alphabet(void) {
 char ch = 'a'; /* declare and initialize current letter */
 
-while (ch <= 'z')
-{ /* iterate over the lowercase alphabet */
+while (ch <= 'z') { /* iterate over the lowercase alphabet */
 _putchar(ch++); /* print and increment current letter */
 }
- _putchar('\n'); /* print a newline character */
+
+_putchar('\n'); /* print a newline character */
+}
+
+int main(void) {
+print_alphabet();
+return (0);
 }
