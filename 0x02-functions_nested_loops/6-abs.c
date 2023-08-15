@@ -9,7 +9,7 @@
 int _abs(int n)
 {
 if (n < 0)
-return (-n); /* Return the negative of n if n is negative*/
+return (-n); /* Return the negative of n if n is negative */
 else
-return (n); /* Return n if n is non-negative*/
+return (n); /* Return n if n is non-negative */
 }
