@@ -3,28 +3,31 @@
 /**
  * main - Entry point
  *
- * Description: Prints the first 50 Fibonacci numbers,
- * starting with 1 and 2, followed by a new line.
- *
  * Return: Always 0 (Success)
  */
 int main(void)
 {
-int i;
-long int fib1 = 1, fib2 = 2, next_fib;
+    int i, n;
+    unsigned long int fib1 = 1, fib2 = 2, next;
 
-printf("%ld, %ld", fib1, fib2);
+    n = 50; // Number of Fibonacci numbers to generate
 
-for (i = 2; i < 50; i++)
-{
-next_fib = fib1 + fib2;
-printf(", %ld", next_fib);
+    for (i = 1; i <= n; i++)
+    {
+        if (i == 1)
+            printf("%lu", fib1);
+        else if (i == 2)
+            printf("%lu", fib2);
+        else
+        {
+            next = fib1 + fib2;
+            printf(", %lu", next);
+            fib1 = fib2;
+            fib2 = next;
+        }
+    }
 
-fib1 = fib2;
-fib2 = next_fib;
+    printf("\n");
+
+    return (0);
 }
-
-printf("\n");
-return (0);
-}
-
