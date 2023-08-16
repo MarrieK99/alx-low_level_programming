@@ -6,43 +6,52 @@
  */
 void print_times_table(int n)
 {
-if (n < 0 || n > 15)
-return;
+    if (n <= 15 && n >= 0)
+    {
+        int i, j, product;
+        char buffer[10];
 
-int i;
-int j;
-
-for (i = 0; i <= n; i++)
-{
-for (j = 0; j <= n; j++)
-{
-int result = i * j;
-
-if (j == 0)
-_putchar(result + '0');
-else
-{
-_putchar(',');
-_putchar(' ');
-
-if (result < 10)
-_putchar(' ');
-if (result < 100)
-_putchar(' ');
-
-_putchar((result / 100) + '0');
-_putchar(((result / 10) % 10) + '0');
-_putchar((result % 10) + '0');
+        for (i = 0; i <= n; i++)
+        {
+            for (j = 0; j <= n; j++)
+            {
+                product = i * j;
+                if (j == 0)
+                {
+                    int k = 0;
+                    if (product == 0)
+                        _putchar('0');
+                    else
+                    {
+                        while (product > 0)
+                        {
+                            buffer[k++] = (product % 10) + '0';
+                            product /= 10;
+                        }
+                        for (int l = k - 1; l >= 0; l--)
+                            _putchar(buffer[l]);
+                    }
+                }
+                else
+                {
+                    _putchar(',');
+                    _putchar(' ');
+                    int k = 0;
+                    if (product == 0)
+                        _putchar('0');
+                    else
+                    {
+                        while (product > 0)
+                        {
+                            buffer[k++] = (product % 10) + '0';
+                            product /= 10;
+                        }
+                        for (int l = k - 1; l >= 0; l--)
+                            _putchar(buffer[l]);
+                    }
+                }
             }
-}
-_putchar('\n');
-}
-}
-
-int main(void)
-{
-int n = 10; /* Change this to the desired n value */
-print_times_table(n);
-
-return (0);
+            _putchar('\n');
+        }
+    }
 }
