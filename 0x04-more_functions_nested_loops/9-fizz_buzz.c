@@ -3,7 +3,7 @@
 /**
  * main - Entry point
  *
- * Description: Prints numbers from 1 to 100 with replacements
+ * Description: Prints numbers 1 - 100 with replacements
  * as per Fizz-Buzz rules.
  *
  * Return: Always 0 (Success)
