@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <math.h>
-/**
- * Finds largest prime factor of a number.
- * @param n The number to find the largest prime factor of.
- * @return The largest prime factor of n.
- */
 
+/**
+ * largest_prime_factor - Finds the largest prime factor of a number.
+ * @n: The number to find the largest prime factor of.
+ * Return: The largest prime factor of n.
+ */
 void largest_prime_factor(unsigned long n)
 {
 unsigned long divisor = 2;
@@ -25,6 +25,10 @@ divisor++;
 printf("%lu\n", divisor);
 }
 
+/**
+ * main - Entry point
+ * Return: Always 0
+ */
 int main(void)
 {
 unsigned long number = 612852475143;
