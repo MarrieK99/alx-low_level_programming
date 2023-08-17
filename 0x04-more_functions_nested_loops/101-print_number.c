@@ -5,7 +5,7 @@
  * @n: The integer to be printed
  *
  * Description: This function prints an integer using the _putchar function.
- * It extracts digits from the number one by one and prints them in reverse order.
+ * Extracts digits of a number one by one and prints them in reverse order.
  */
 void print_number(int n)
 {
