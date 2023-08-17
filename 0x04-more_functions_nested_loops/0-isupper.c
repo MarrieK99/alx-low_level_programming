@@ -8,12 +8,12 @@
  */
 int _isupper(int c)
 {
-    if (c >= 'A' && c <= 'Z')
-    {
-        return 1; /* The character is uppercase */
-    }
-    else
-    {
-        return (0); /* The character is not uppercase */
-    }
+if (c >= 'A' && c <= 'Z')
+{
+return (1); /* The character is uppercase */
+}
+else
+{
+return (0); /* The character is not uppercase */
+}
 }
