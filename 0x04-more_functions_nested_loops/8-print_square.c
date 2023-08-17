@@ -4,7 +4,7 @@
  * print_square - Prints a square using _putchar
  * @size: The size of the square
  *
- * Description: This function prints a square of '#' characters using the _putchar function.
+ * Description: function prints square of '#' characters using _putchar function.
  * It prints 'size' number of rows and columns.
  */
 void print_square(int size)
