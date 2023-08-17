@@ -1,24 +1,28 @@
 #include "main.h"
 
 /**
- * print_square - Print a square of '#' characters
- * @size: Size of the square
+ * print_square - Prints a square using _putchar
+ * @size: The size of the square
+ *
+ * Description: function prints square of '#' character using _putchar function.
+ * It prints 'size' number of rows and columns.
  */
 void print_square(int size)
 {
+    int row, col;
+
     if (size <= 0)
     {
         _putchar('\n');
         return;
     }
 
-    int i, j;
-
-    for (i = 0; i < size; i++)
+    for (row = 0; row < size; row++)
     {
-        for (j = 0; j < size; j++)
+        for (col = 0; col < size; col++)
+        {
             _putchar('#');
-
+        }
         _putchar('\n');
     }
 }
