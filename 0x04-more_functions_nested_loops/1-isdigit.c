@@ -10,7 +10,8 @@ int _isdigit(int c)
 {
     if (c >= '0' && c <= '9')
     {
-        return 1; /* The character is a digit */
+        return (1)
+; /* The character is a digit */
     }
     else
     {
