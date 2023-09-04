@@ -3,60 +3,78 @@
 #include <stdlib.h>
 
 /**
- * count_words - Count the number of words in a string.
- * @str: The input string.
- * strtow - Splits a string into words.
- * Return: The number of words.
- */
-int count_words(char *str);
-/**
- * strtow - Splits a string into words.
- * @str: The input string.
+ * print_tab - Prints an array of strings
+ * @tab: The array to print
  *
- * Return: An array of words, or NULL on failure.
+ * Return: Nothing
+ */
+void print_tab(char **tab)
+{
+int i;
+
+for (i = 0; tab[i] != NULL; ++i)
+{
+printf("%s\n", tab[i]);
+}
+}
+
+/**
+ * strtow - Splits a string into words
+ * @str: The input string
+ *
+ * Return: A pointer to an array of strings (words)
  */
 char **strtow(char *str)
 {
-int num_words, i, word_len, in_word;
 char **words;
-
+int i, j, word_count = 0, in_word = 0;
 
 if (str == NULL || *str == '\0')
 return (NULL);
 
-num_words = count_words(str);
-if (num_words == 0)
-return (NULL);
-
-words = malloc((num_words + 1) * sizeof(char *));
-if (words == NULL)
-return (NULL);
-
-in_word = 0;
-word_len = 0;
-
-for (i = 0; str[i] != '\0'; i++)
+for (i = 0; str[i]; i++)
 {
-if (str[i] != ' ' && str[i] != '\t' && str[i] != '\n')
+if (str[i] != ' ' && str[i] != '\t')
 {
 if (!in_word)
 {
 in_word = 1;
-words[word_len] = str + i;
-word_len++;
+word_count++;
 }
 }
 else
 {
-if (in_word)
+in_word = 0;
+}
+}
+
+words = malloc(sizeof(char *) * (word_count + 1));
+if (words == NULL)
+{
+free(words);
+return (NULL);
+}
+
+
+in_word = 0;
+for (i = 0, j = 0; str[i]; i++)
+{
+if (str[i] != ' ' && str[i] != '\t')
+{
+if (!in_word)
+{
+in_word = 1;
+words[j] = str + i;
+j++;
+}
+}
+else
 {
 in_word = 0;
 str[i] = '\0';
 }
 }
-}
-
-words[word_len] = NULL;
-
+words[j] = NULL;
 return (words);
 }
+
