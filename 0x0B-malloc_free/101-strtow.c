@@ -1,80 +1,45 @@
 #include "main.h"
-#include <stdio.h>
 #include <stdlib.h>
-
+#include <stdio.h>
+#include <string.h>
 /**
- * print_tab - Prints an array of strings
- * @tab: The array to print
+ * strtow - Splits a string into words.
+ * @str: The string to split.
  *
- * Return: Nothing
- */
-void print_tab(char **tab)
-{
-int i;
-
-for (i = 0; tab[i] != NULL; ++i)
-{
-printf("%s\n", tab[i]);
-}
-}
-
-/**
- * strtow - Splits a string into words
- * @str: The input string
- *
- * Return: A pointer to an array of strings (words)
+ * Return: A pointer to an array of strings (words), or NULL on failure.
  */
 char **strtow(char *str)
 {
-char **words;
-int i, j, word_count = 0, in_word = 0;
+char **tab;
+int i;
+char *token;
 
-if (str == NULL || *str == '\0')
-return (NULL);
+if (str == NULL || str[0] == '\0')
+return NULL;
 
-for (i = 0; str[i]; i++)
+tab = malloc(sizeof(char *) * (strlen(str) + 1));
+if (tab == NULL)
+return NULL;
+
+i = 0;
+token = strtok(str, " ");
+while (token != NULL)
 {
-if (str[i] != ' ' && str[i] != '\t')
-{
-if (!in_word)
-{
-in_word = 1;
-word_count++;
-}
-}
-else
-{
-in_word = 0;
-}
+tab[i] = token;
+i++;
+token = strtok(NULL, " ");
 }
 
-words = malloc(sizeof(char *) * (word_count + 1));
-if (words == NULL)
+if (token != NULL)
 {
-free(words);
-return (NULL);
+free(tab);
+return NULL;
+}
+
+tab[i] = NULL;
+return tab;
 }
 
 
-in_word = 0;
-for (i = 0, j = 0; str[i]; i++)
-{
-if (str[i] != ' ' && str[i] != '\t')
-{
-if (!in_word)
-{
-in_word = 1;
-words[j] = str + i;
-j++;
-}
-}
-else
-{
-in_word = 0;
-str[i] = '\0';
-}
-}
-words[j] = NULL;
-return (words);
-}
+
 
