@@ -15,11 +15,11 @@ int i;
 char *token;
 
 if (str == NULL || str[0] == '\0')
-return NULL;
+return (NULL);
 
 tab = malloc(sizeof(char *) * (strlen(str) + 1));
 if (tab == NULL)
-return NULL;
+return (NULL);
 
 i = 0;
 token = strtok(str, " ");
@@ -33,11 +33,11 @@ token = strtok(NULL, " ");
 if (token != NULL)
 {
 free(tab);
-return NULL;
+return (NULL);
 }
 
 tab[i] = NULL;
-return tab;
+return (tab);
 }
 
 
