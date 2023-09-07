@@ -1,10 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 /**
- * is_digit - Checks if a string contains only digits
- * @str: The string to check
+ * is_digit - Check if a string contains only digits.
+ * @str: The input string
  *
- * Return: 1 if the string contains only digits, 0 otherwise
+ * Return: 1 if all characters are digits, 0 otherwise
  */
 int is_digit(char *str)
 {
@@ -16,39 +17,27 @@ str++;
 }
 return (1);
 }
+
 /**
- * main - Multiplies two positive numbers
+ * main - Entry point
  * @argc: The number of command-line arguments
  * @argv: An array of command-line argument strings
  *
- * Return: 0 on success, 98 on error
+ * Return: 0 on success, 98 on failure
  */
 int main(int argc, char *argv[])
 {
-char *num1_str;
-char *num2_str;
-unsigned long num1;
-unsigned long num2;
-unsigned long result;
-
-if (argc != 3)
+unsigned long num1, num2, result;
+if (argc != 3 || !is_digit(argv[1]) || !is_digit(argv[2]))
 {
 printf("Error\n");
 return (98);
 }
 
-num1_str = argv[1];
-num2_str = argv[2];
-
-if (!is_digit(num1_str) || !is_digit(num2_str))
-{
-printf("Error\n");
-return (98);
-}
-
-num1 = strtoul(num1_str, NULL, 10);
-num2 = strtoul(num2_str, NULL, 10);
-result = num1 * num2;
+/* Convert command-line arguments to integers &  multiply */
+num1 = strtoul(argv[1], NULL, 10);
+num2 = strtoul(argv[2], NULL, 10);
+result = num1 *num2;
 
 printf("%lu\n", result);
 
