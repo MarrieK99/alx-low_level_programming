@@ -11,15 +11,19 @@
 char **strtow(char *str)
 {
 char **tab;
-int i;
+int i, j;
 char *token;
 
 if (str == NULL || str[0] == '\0')
 return (NULL);
 
-tab = malloc(sizeof(char *) * (strlen(str) + 1));
+j = strlen(str) + 1;
+tab = malloc(sizeof(char *) * j);
 if (tab == NULL)
+{
+printf("Failed to allocate memory\n");
 return (NULL);
+}
 
 i = 0;
 token = strtok(str, " ");
@@ -30,12 +34,15 @@ i++;
 token = strtok(NULL, " ");
 }
 
+tab[i] = NULL;
 if (token != NULL)
 {
 free(tab);
 return (NULL);
 }
 
+return (tab);
+}
 tab[i] = NULL;
 return (tab);
 }
