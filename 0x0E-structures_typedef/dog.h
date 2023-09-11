@@ -7,16 +7,20 @@
  * @age: Age of the dog (a float)
  * @owner: Owner of the dog (a string)
  */
-typedef struct dog
+struct dog
 {
-char *name;
-float age;
-char *owner;
-}
-dog_t;
+    char *name;
+    float age;
+    char *owner;
+};
+
+/**
+ * dog_t - Typedef for struct dog
+ */
+typedef struct dog dog_t;
+
+/* Prototype for the new_dog function */
+dog_t *new_dog(char *name, float age, char *owner);
 
 #endif
-
-
-
 
