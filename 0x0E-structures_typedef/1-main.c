@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "dog.h"
-
+#include "init_dog.h"
 int main(void)
 {
     struct dog my_dog;
