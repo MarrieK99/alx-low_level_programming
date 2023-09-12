@@ -11,42 +11,31 @@
  *
  * Return: Pointer to the new dog struct or NULL if memory allocation fails
  */
+
 dog_t *new_dog(char *name, float age, char *owner)
 {
-if (name == NULL || owner == NULL)
-return (NULL);
-
+char *name_copy, *owner_copy;
 dog_t *new_dog_ptr;
-/* Implementation of the new_dog function goes here */
-}
-/* Allocate memory for the new dog struct */
+/* Allocate memory for the dog structure */
 new_dog_ptr = malloc(sizeof(dog_t));
 if (new_dog_ptr == NULL)
 return (NULL);
 
-/* Allocate memory for a copy of the name */
-new_dog_ptr->name = malloc(sizeof(char) * (strlen(name) + 1));
-if (new_dog_ptr->name == NULL)
+/* Allocate memory for the name and owner strings and copy their contents */
+name_copy = strdup(name);
+owner_copy = strdup(owner);
+
+if (name_copy == NULL || owner_copy == NULL)
 {
+free(name_copy);
+free(owner_copy);
 free(new_dog_ptr);
 return (NULL);
 }
 
-/* Allocate memory for a copy of the owner */
-new_dog_ptr->owner = malloc(sizeof(char) * (strlen(owner) + 1));
-if (new_dog_ptr->owner == NULL)
-{
-free(new_dog_ptr->name);
-free(new_dog_ptr);
-return (NULL);
-}
-
-/* Copy the name and owner to the new struct */
-strcpy(new_dog_ptr->name, name);
-strcpy(new_dog_ptr->owner, owner);
-
-/* Set the age */
+new_dog_ptr->name = name_copy;
 new_dog_ptr->age = age;
+new_dog_ptr->owner = owner_copy;
 
 return (new_dog_ptr);
 }

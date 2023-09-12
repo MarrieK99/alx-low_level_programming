@@ -12,7 +12,7 @@
 void print_dog(struct dog *d)
 {
 if (d != NULL) /* Check if d is not NULL */
-{
+
 /* Print the dog's name or "(nil)" if name is NULL */
 printf("Name: %s\n", (d->name != NULL) ? d->name : "(nil)");
 
