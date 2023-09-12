@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include "dog.h"
-#include "print_dog.h"  /* Include the print_dog.h header*/
 
 /**
  * main - check the code
