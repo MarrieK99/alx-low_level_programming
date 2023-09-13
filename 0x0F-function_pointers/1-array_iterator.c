@@ -7,7 +7,7 @@
  * @size: The size of the array
  * @action: A pointer to the function to be executed on each element
  *
- * Description: This function applies the given function to each element of the array.
+ * Description: function applies given function to each element of the array.
  *
  * Return: None
  */
