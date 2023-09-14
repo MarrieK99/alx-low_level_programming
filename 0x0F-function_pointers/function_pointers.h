@@ -8,7 +8,7 @@ void array_iterator(int *array, size_t size, void (*action)(int));
 /* Function prototype for int_index */
 int int_index(int *array, int size, int (*cmp)(int));
 /* Function prototypes */
-void print_opcodes(void);
+void print_opcodes(int argc, char *argv[]);
 
 
 

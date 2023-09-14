@@ -22,12 +22,10 @@ int main(int argc, char *argv[])
         exit(2);
     }
 
-    unsigned char *main_ptr = (unsigned char *)main;
-
     int i;
     for (i = 0; i < num_bytes; i++)
     {
-        printf("%02x", main_ptr[i]);
+        printf("%02x", main[i]);
         if (i < num_bytes - 1)
             printf(" ");
     }
